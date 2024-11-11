@@ -71,7 +71,7 @@ public class Branch {
 	
 	//get customers
 	
-	public  Customer getCustomer(String name) {
+	private  Customer getCustomer(String name) {
 		for(int i = 0; i<customers.size();i++) {
 			Customer currentCustomer = customers.get(i);
 			if(currentCustomer.getName().toLowerCase().equals(name.toLowerCase())) {

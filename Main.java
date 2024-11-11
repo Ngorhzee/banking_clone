@@ -3,6 +3,65 @@ package com.bankapplication;
 import java.util.Scanner;
 
 public class Main {
+
+	    // You job is to create a simple banking application.
+        // There should be a Bank class
+        // It should have an arraylist of Branches
+        // Each Branch should have an arraylist of Customers
+        // The Customer class should have an arraylist of Doubles (transactions)
+        // Customer:
+        // Name, and the ArrayList of doubles.
+        // Branch:
+        // Need to be able to add a new customer and initial transaction amount.
+        // Also needs to add additional transactions for that customer/branch
+        // Bank:
+        // Add a new branch
+        // Add a customer to that branch with initial transaction
+        // Add a transaction for an existing customer for that branch
+        // Show a list of customers for a particular branch and optionally a list
+        // of their transactions
+        // Demonstration autoboxing and unboxing in your code
+        // Hint: Transactions
+        // Add data validation.
+        // e.g. check if exists, or does not exist, etc.
+        // Think about where you are adding the code to perform certain actions
+
+		public static void main(String[] args) {
+			System.out.println("Welcome To Online Banking");
+			printOptions();
+			boolean quit = false;
+			while (!quit) {
+				System.out.println("Select Option");
+				int option = scanner.nextInt();
+				scanner.nextLine();
+	
+				switch (option) {
+				case 1:
+					addNewBranch();
+					break;
+				case 2:
+					addNewCustomertoBranch();
+					break;
+				case 3:
+					printCustomers();
+					break;
+				case 4:
+					addNewtransaction();
+					break;
+				case 5:
+					bank.printBranches();
+					break;
+				case 6:
+					printOptions();
+					break;
+				case 7:
+				quit = true;
+					break;
+	
+				}
+			}
+		}
+
 	private static Scanner scanner = new Scanner(System.in);
 	private static Bank bank = new Bank();
 
@@ -59,37 +118,5 @@ public class Main {
 		bank.addCustomerTransaction(branchName, customerName, initialDeposit);
 	}
 
-	public static void main(String[] args) {
-		System.out.println("Welcome To Online Banking");
-		printOptions();
-		while (true) {
-			System.out.println("Select Option");
-			int option = scanner.nextInt();
-			scanner.nextLine();
-
-			switch (option) {
-			case 1:
-				addNewBranch();
-				break;
-			case 2:
-				addNewCustomertoBranch();
-				break;
-			case 3:
-				printCustomers();
-				break;
-			case 4:
-				addNewtransaction();
-				break;
-			case 5:
-				bank.printBranches();
-				break;
-			case 6:
-				printOptions();
-				break;
-			case 7:
-				break;
-
-			}
-		}
-	}
+	
 }

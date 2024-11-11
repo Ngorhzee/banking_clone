@@ -52,7 +52,7 @@ public class Bank {
 	}
 	
 	// getBranch
-	public Branch getBranch(String name) {
+	private Branch getBranch(String name) {
 		for(int i=0; i< branches.size(); i++ ) {
 			Branch currentBranch = branches.get(i);
 			if(currentBranch.getName().toLowerCase().equals(name.toLowerCase())) {
